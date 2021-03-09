@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>The roll of the dice</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="battleField">
+            <input type="button" value="Roll your dice!" class="btn player1">
+            <div class="dice player1">?</div>
+        </div>
+        <div class="battleField">
+            <input type="button" value="Roll your dice!" class="btn player2">
+            <div class="dice player2">?</div>
+        </div>
+    </div>
+    
+    <script>
+        let buttons = document.getElementsByClassName("btn");
+        for (let button of buttons) {
+            button.addEventListener("click", rollDice);
+        }
+
+        function rollDice() {
+            let player = this.className.includes("player1") ? "player1" : "player2";
+            document.querySelector(`div.${player}`).innerHTML = getRandomNumber();
+
+            compareDice();
+        }
+
+        function compareDice() {
+            let dice = document.getElementsByClassName("dice");
+            let player1 = dice[0];
+            let player2 = dice[1];
+            
+            let dicePlayer1 = parseInt(player1.innerHTML);
+            let dicePlayer2 = parseInt(player2.innerHTML);
+            if (isNaN(dicePlayer1) || isNaN(dicePlayer2)) return;
+
+            if (dicePlayer1 > dicePlayer2) player1.innerHTML = "WINNER";
+            else if (dicePlayer1 < dicePlayer2) player2.innerHTML = "WINNER";     
+        }
+
+        function getRandomNumber() {
+            return Math.floor((Math.random()*6)+1);
+        }
+        
+    </script>
+</body>
+</html>
