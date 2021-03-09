@@ -9,10 +9,13 @@
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            
+            grid-template-rows: 1fr 1fr 1fr;
             
           }
-
+          img {
+              width: 250px;
+              height: auto;
+          }
     
     </style>
 </head>
@@ -31,9 +34,14 @@
 
     <script>   
         let santaImg = document.getElementsByClassName("item santa");
-        for (let i = 0;i < santaImg.length; i++) {
-            santaImg[i].addEventListener("click", removeSanta);
-        }
+        // for (let i = 0;i < santaImg.length; i++) {
+        //     santaImg[i].addEventListener("click", removeSanta);
+            // } oder:
+            
+            for (let element of santaImg) {
+                element.addEventListener("click",removeSanta);
+            }
+        
 
         function removeSanta() {
             this.style.opacity=0;
