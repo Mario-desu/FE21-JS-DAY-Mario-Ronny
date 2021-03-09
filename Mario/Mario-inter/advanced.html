@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+
+        div#circle {
+            border-radius: 50%;
+            background-color: teal;
+            width: 20vw;
+            height: 20vw;
+        }
+    </style>
+
+
+</head>
+<body>
+    <main>
+        <h2>Advanced</h2>
+        <div id="circle"></div><br>
+        <div id="output"></div>
+    </main>
+
+    <script>
+
+        let myObject = document.getElementById("circle");
+        let myOutput = document.getElementById("output");
+
+        myObject.addEventListener("mouseenter", function(){ 
+            myOutput.innerHTML = "you are inside the circle"; 
+        });
+
+        myObject.addEventListener("mouseleave", function(){ 
+            myOutput.innerHTML = "you are outside of the circle"; 
+        });
+
+        myObject.addEventListener("click", function(){ 
+            myObject.style.backgroundColor = "grey"; 
+        });
+
+        myObject.addEventListener("dblclick", function(){ 
+            myObject.style.backgroundColor = "lightskyblue"; 
+        });
+        
+        // let circle = document.getElementsByClassName("circle");
+        // let output = document.getElementsByClassName("output_text");
+     
+        // circle.addEventListener("mouseenter", function(){ 
+        //     output.innerHTML = "you are inside the circle"; 
+        // });
+
+        // circle.addEventListener("mouseleave", function(){ 
+        //     output.innerHTML = "you are outside of the circle"; 
+        // });
+
+        // circle.addEventListener("click", function(){ 
+        //     output.style.backgroundColor = "grey"; 
+        // });
+
+        // circle.addEventListener("dblclick", function(){ 
+        //     output.style.backgroundColor = "lightskyblue"; 
+        // });
+
+    </script>
+
+</body>
+</html>
