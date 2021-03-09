@@ -47,6 +47,10 @@
 
             if (dicePlayer1 > dicePlayer2) player1.innerHTML = "WINNER";
             else if (dicePlayer1 < dicePlayer2) player2.innerHTML = "WINNER";     
+            else {
+                player1.innerHTML = "DRAW";
+                player2.innerHTML = "DRAW";
+            }
         }
 
         function getRandomNumber() {
