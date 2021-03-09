@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Basic Exercise 1</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2px;
+        }
+        .targetDiv{
+            width: 151px;
+            height: 20px;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="formElement" placeholder="firstname">
+        <input type="text" class="formElement" placeholder="lastname">
+        <input type="text" class="formElement" placeholder="age">
+        <select name="Profession" id="job" class="formElement">
+            <option>IT</option>
+            <option>Hospitality</option>
+        </select>
+        <input type="button" id="btn" value="Click me">
+    </div>
+    <div class="container">
+        <div class="targetDiv name"></div>
+        <div class="targetDiv name"></div>
+        <div class="targetDiv"></div> 
+        <div class="targetDiv job"></div>
+
+    </div>
+    
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", transferValues);
+
+        function transferValues(){
+            let divs = document.getElementsByClassName("targetDiv");
+            let textInputs = document.getElementsByClassName("formElement");
+
+            for (let i = 0; i < textInputs.length; i++) {
+                let value = textInputs[i].value;
+                divs[i].innerHTML = value;
+
+                if (divs[i].className.includes("name")) {
+                    divs[i].style.backgroundColor = value.length > 5 ? "darkgreen" : "red";
+                }
+
+                if (divs[i].className.includes("job")) {
+                    divs[i].style.backgroundColor = value === "IT" ? "purple" : "yellow";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
