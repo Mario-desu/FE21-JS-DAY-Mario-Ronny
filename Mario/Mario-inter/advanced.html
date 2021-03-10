@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced</title>
+
     <style>
         body {
             display: grid;
@@ -20,19 +21,24 @@
             width: 20vw;
             height: 20vw;
         }
+
+
     </style>
-
-
 </head>
 <body>
+    <!-- Create a circle and center it on the page. 
+    When you hover on the circle, you will see a message under it : "you are in the circle".
+    When the mouse leaves the circle you will see the message under it : "you are outside of the circle".
+    When you click on the circle, the background will change to gray.
+    When you double-click on the circle, the background will change to blue.  -->
+    
     <main>
         <h2>Advanced</h2>
         <div id="circle"></div><br>
         <div id="output"></div>
-    </main>
+    </main>   
 
     <script>
-
         let myObject = document.getElementById("circle");
         let myOutput = document.getElementById("output");
 
@@ -51,25 +57,8 @@
         myObject.addEventListener("dblclick", function(){ 
             myObject.style.backgroundColor = "lightskyblue"; 
         });
-        
-        // let circle = document.getElementsByClassName("circle");
-        // let output = document.getElementsByClassName("output_text");
-     
-        // circle.addEventListener("mouseenter", function(){ 
-        //     output.innerHTML = "you are inside the circle"; 
-        // });
 
-        // circle.addEventListener("mouseleave", function(){ 
-        //     output.innerHTML = "you are outside of the circle"; 
-        // });
-
-        // circle.addEventListener("click", function(){ 
-        //     output.style.backgroundColor = "grey"; 
-        // });
-
-        // circle.addEventListener("dblclick", function(){ 
-        //     output.style.backgroundColor = "lightskyblue"; 
-        // });
+        // look here for the events: https://wiki.selfhtml.org/wiki/JavaScript/DOM/Event
 
     </script>
 
